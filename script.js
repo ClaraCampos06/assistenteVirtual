@@ -168,7 +168,7 @@ function enviarMensagem() {
 
     } else {
 
-        resposta = `O ${tatuadorEscolhido} não possui disponibilidade nesse dia. Escolha outro dia.`
+        resposta = `${tatuadorEscolhido} não possui disponibilidade nesse dia. Escolha outro dia.`
 
     }
 }
@@ -203,11 +203,11 @@ function enviarMensagem() {
 
     chat.innerHTML += `
         <div class="usuario">
-            Você: ${input.value}
+            <strong>Você:</strong> ${input.value}
         </div>
 
         <div class="assistente">
-            CC Studio: ${resposta}
+            <strong>CC Studio</strong>: ${resposta}
         </div>
     `
 

@@ -15,7 +15,9 @@ body {
 body{
     width: 100%;
     height: 100dvh;
-     background-color: rgb(255, 255, 255);
+     background-image: url(fundo.jpg);
+     background-size: cover;
+     background-position: center;
     display: flex;
     
     padding: 20px;
@@ -25,21 +27,47 @@ body{
 }
 
 h1{
-   
     width: 100%;
+    text-align: center;
     flex-shrink: 0;
     height: auto;
-
-
-    color: black;
-    font-size: 2.6em;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 2.3em;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
+p{
+    color: white;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 1em;
+}
+ul{
+    width: 100%;
+    height: 4%;
+    display: flex;
+    align-items: center;
+    font-size: .9em;
+    color: white;
+    justify-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+li{
+    width: 25%;
+    font-weight: bold;
+    text-transform: uppercase;
+    list-style: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#lista{
+    width: 14%;
+}
 #rodape {
     width: 100%;
-    height: 55px;
+    height: 50px;
 
     display: flex;
     gap: 5px;
@@ -49,16 +77,31 @@ h1{
 #rodape input{
     width: 75%;
     padding: 10px;
-    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.719);
     border: none;
-    background-color: lightgray;
+    font-size: 1.2em;
+    font-weight: lighter;
+    background-color: transparent;
 }
 
+#mensagem::placeholder{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+}
+
+#mensagem:focus{
+    background-color: rgba(255, 255, 255, 0.527);
+    color: black;
+    border: hidden;
+}
 #rodape button{
     width: 25%;
-    border-radius: 20px;
-    border: none;
-    background-color: rgb(179, 176, 176);
+
+    border: 2px solid white;
+    font-size: 1.4em;
+    color: white;
+    background-color: transparent;
     
 }
 
@@ -80,9 +123,9 @@ h1{
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 1.3em;
-    background-color: lightgray;
-    border-radius: 20px;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.63);
+
     overflow-wrap: break-word;
 }
 
@@ -92,8 +135,7 @@ h1{
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 1.3em;
-    background-color: rgb(179, 176, 176);
-    border-radius: 20px;
+    font-size: 1.1em;
+    background-color: rgba(255, 255, 255, 0.966);
     overflow-wrap: break-word;
 }
