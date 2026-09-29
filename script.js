@@ -207,7 +207,7 @@ function enviarMensagem() {
         </div>
 
         <div class="assistente">
-            <strong>CC Studio</strong>: ${resposta}
+            <strong>CC</strong>: ${resposta}
         </div>
     `
 
