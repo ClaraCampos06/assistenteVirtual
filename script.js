@@ -1,22 +1,34 @@
 let etapa = "inicio"
 
+
+
 let tatuadorEscolhido = ""
 let diaEscolhido = ""
 let horarioEscolhido = ""
+let nomeCliente = ""
 
 let disponibilidade = {
-Maria: {
-quinta: ["10h", "14h", "16h"]
-},
 
-Paulo: {
-segunda: ["09h", "13h", "18h"]
-},
+    Maria: {
+        segunda: ["7h", "9h", "11h"],
+        quarta: ["9h", "11h", "14h"],
+        sexta: ["7h", "16h"]
+    },
 
-Andre: {
-sexta: ["11h", "15h"]
+    Paulo: {
+        segunda: ["11h", "13h", "18h"],
+        terça: ["9h", "16h"],
+        quinta: ["13h", "18h"]
+    },
+
+    Andre: {
+        terça: ["18h", "21h"],
+        quarta: ["11h", "15h"],
+        sexta: ["18h", "23h"]
+    }
+
 }
-}
+
 
 
 let tatuadores = [
@@ -84,7 +96,12 @@ function identificarOpcao(mensagem){
         mensagem.includes("marcar")
     ) {
     opcao = "agendamento"
-    }
+    } else if (mensagem.includes("local")||
+               mensagem.includes("estudio") ||
+               mensagem.includes("endereco")     
+            ) {
+                opcao = "localizacao"
+            }
 
     return opcao
 }
@@ -114,12 +131,14 @@ function gerarResposta(opcao){
     break
 
     case "agendamento":
-        resposta = "Vamos agendar o melhor horário! Qual tatuador você se identifica mais?"
+        resposta = "Para agendar, conheça nossos tatuadores: <br>Qual tatuador você se identifica mais? <br>"
+          for (let tatuador of tatuadores){
+        resposta += `${tatuador.nome} >>  ${tatuador.estilo} <br>`
+    }
         etapa = "tatuador"
         break
 
-    default:
-    resposta = "Tente novamente"
+ 
     }
 
     return resposta
@@ -141,81 +160,223 @@ function enviarMensagem() {
         .replace(/[\u0300-\u036f]/g, "")
 
     let resposta
+    let opcao = identificarOpcao(mensagem)
 
 
-  if (etapa === "tatuador") {
+    if (
+    opcao === "dia" ||
+    opcao === "horario" ||
+    opcao === "tatuadores" ||
+    opcao === "valor" ||
+    opcao === "localizacao"
+) {
 
-    let nome = input.value.trim()
+    resposta = gerarResposta(opcao)
+
+}
+
+else if (etapa === "tatuador") {
+
+    let nome = input.value.trim().toLowerCase()
 
     let tatuador = tatuadores.find(function(t) {
-        return t.nome.toLowerCase() === nome.toLowerCase()
+        return t.nome.toLowerCase() === nome
     })
 
     if (tatuador) {
 
         tatuadorEscolhido = tatuador.nome
 
-        resposta = `Perfeito! Você escolheu ${tatuador.nome}. Qual dia você gostaria?`
+        let dias = Object.keys(
+            disponibilidade[tatuadorEscolhido]
+        )
+
+        resposta = `
+            Você escolheu ${tatuador.nome}.
+            <br><br>
+
+            Dias disponíveis:<br>
+            ${dias.join(", ")}
+            <br><br>
+
+            Qual dia você prefere?
+        `
 
         etapa = "dia"
 
     } else {
 
-        resposta = "Não encontrei esse tatuador. Escolha um dos nossos tatuadores."
-
+        resposta = `
+            Não encontrei esse tatuador.
+            <br><br>
+            Escolha um dos nossos tatuadores.
+        `
     }
+
 }
 
-  else if (etapa === "dia") {
+else if (etapa === "dia") {
 
     let dia = input.value.trim().toLowerCase()
 
-    if (
-        disponibilidade[tatuadorEscolhido] &&
-        disponibilidade[tatuadorEscolhido][dia]
-    ) {
+    let diasDisponiveis = Object.keys(
+        disponibilidade[tatuadorEscolhido]
+    )
+
+    if (diasDisponiveis.includes(dia)) {
 
         diaEscolhido = dia
 
-        let horarios = disponibilidade[tatuadorEscolhido][diaEscolhido]
+        let horarios =
+            disponibilidade[tatuadorEscolhido][diaEscolhido]
 
-        resposta = `Perfeito! ${tatuadorEscolhido} tem estes horários disponíveis na ${diaEscolhido}: ${horarios.join(", ")}. Qual você prefere?`
+        resposta = `
+            Perfeito!
+            <br><br>
+
+            ${tatuadorEscolhido} tem estes horários disponíveis
+            na ${diaEscolhido}:
+
+            <br><br>
+
+            ${horarios.join(", ")}
+
+            <br><br>
+
+            Qual horário você prefere?
+        `
 
         etapa = "horario"
 
     } else {
 
-        resposta = `${tatuadorEscolhido} não possui disponibilidade nesse dia. Escolha outro dia.`
+        resposta = `
+            Não encontrei disponibilidade de
+            ${tatuadorEscolhido} na ${dia}.
 
+            <br><br>
+
+            Dias disponíveis:
+            ${diasDisponiveis.join(", ")}
+        `
     }
+
 }
-    else if (etapa === "horario") {
 
-        horarioEscolhido = input.value.toLowerCase()
+else if (etapa === "horario") {
 
-        if (
-            disponibilidade[tatuadorEscolhido] &&
-            disponibilidade[tatuadorEscolhido][diaEscolhido] &&
-            disponibilidade[tatuadorEscolhido][diaEscolhido].includes(horarioEscolhido)
-        ) {
+    horarioEscolhido = input.value.trim().toLowerCase()
 
-            resposta = `Ótimo! ${tatuadorEscolhido} está disponível às ${horarioEscolhido} no/a ${diaEscolhido}.`
+    let horarios =
+        disponibilidade[tatuadorEscolhido][diaEscolhido]
 
-        } else {
+    if (horarios.includes(horarioEscolhido)) {
 
-            resposta = `Infelizmente ${tatuadorEscolhido} não está disponível nesse horário. Escolha outro horário.`
+        resposta = `
+            Horário selecionado com sucesso!
 
-        }
+            <br><br>
 
+            Tatuador: ${tatuadorEscolhido}<br>
+            Dia: ${diaEscolhido}<br>
+            Horário: ${horarioEscolhido}
+
+            <br><br>
+
+            Digite aqui o seu nome:
+        `
+
+        etapa = "nome"
+
+    } else {
+
+        resposta = `
+            Esse horário não está disponível.
+
+            <br><br>
+
+            Horários disponíveis:
+            ${horarios.join(", ")}
+        `
     }
 
-    else {
+}
 
-        let opcao = identificarOpcao(mensagem)
+else if (etapa === "nome") {
 
-        resposta = gerarResposta(opcao)
+    nomeCliente = input.value.trim()
 
+    resposta = `
+        Prazer, ${nomeCliente}! 😊
+
+        <br><br>
+
+        Confira seu agendamento:
+
+        <br><br>
+
+        Nome: ${nomeCliente}<br>
+        Tatuador: ${tatuadorEscolhido}<br>
+        Dia: ${diaEscolhido}<br>
+        Horário: ${horarioEscolhido}
+
+        <br><br>
+
+        Deseja confirmar o agendamento?
+
+        <br>
+
+        Digite <strong>SIM</strong> para confirmar.
+    `
+
+    etapa = "confirmacao"
+
+}
+
+else if (etapa === "confirmacao") {
+
+    if (mensagem === "sim") {
+
+        resposta = `
+            <strong>Agendamento confirmado!</strong>
+
+            <br><br>
+
+            Nome: ${nomeCliente}<br>
+            Tatuador: ${tatuadorEscolhido}<br>
+            Dia: ${diaEscolhido}<br>
+            Horário: ${horarioEscolhido}
+
+            <br><br>
+
+            Estamos esperando por você no CC Studio Tattoo.
+        `
+
+        etapa = "inicio"
+
+    } else {
+
+        resposta = `
+            Agendamento não confirmado.
+
+            <br><br>
+
+            Se quiser tentar novamente,
+            digite <strong>agendar</strong>.
+        `
+
+        etapa = "inicio"
     }
+
+}
+
+else {
+
+    resposta = gerarResposta(opcao)
+
+}
+    
+
 
 
     chat.innerHTML += `
@@ -240,5 +401,55 @@ input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         enviarMensagem()
     }
+
+}
+
+
+
+
+)
+
+function mensagemDoIcone(texto) {
+
+    let input = document.querySelector("#mensagem")
+
+    etapa = "inicio"
+
+    input.value = texto
+
+    enviarMensagem()
+
+}
+let calendario = document.querySelector("#calendario")
+let tatuadoresIcone = document.querySelector("#tatuadores")
+let agendamento = document.querySelector("#agendamento")
+let informacao = document.querySelector("#informacao")
+let house = document.querySelector("#house")
+
+
+calendario.addEventListener("click", function() {
+
+    mensagemDoIcone("quais são os dias de funcionamento?")
+
+})
+
+
+tatuadoresIcone.addEventListener("click", function() {
+
+    mensagemDoIcone("quais são os tatuadores?")
+
+})
+
+
+agendamento.addEventListener("click", function() {
+
+    mensagemDoIcone("quero agendar")
+
+})
+
+
+informacao.addEventListener("click", function() {
+
+    mensagemDoIcone("qual é a localização do estúdio?")
 
 })

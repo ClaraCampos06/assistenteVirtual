@@ -241,8 +241,9 @@ body{
     display: flex;
     justify-content: start;
     align-items: start;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.664);
-    max-height: 200px;
+    max-height: auto;
     padding: 10px;
     color: white;
     font-size: 1.1em;
