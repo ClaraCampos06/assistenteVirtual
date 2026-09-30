@@ -39,9 +39,15 @@ let chat = document.querySelector("#chat")
 
 chat.innerHTML = `
     <div class="inicioText">
-        <h1>CC</h1> <br>
+        <h1>CC</h1>
         <p>assistenteVirtual()</p> <br>
-        <p id="paragrafo">Conheça nossos tatuadores e agende um horário digitando o que deseja saber</p>
+        <p id="paragrafo">Conheça nossos tatuadores e agende um horário digitando:</p>
+        <ul id="listaPrincipal">
+        <li>Agendar
+        <li>Horários
+        <li>Tatuadores
+        <li>Orçamento
+        </ul>
     </div>
 `
 
