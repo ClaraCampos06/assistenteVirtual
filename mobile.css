@@ -1,84 +1,117 @@
 @media (max-width: 768px){
 
-
+:root{
+    --fina:"Cantarell", sans-serif;
+    --media:"Average Sans", sans-serif;
+    --redonda:  "Noto Sans JP", sans-serif;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-html,
-body {
-    width: 100%;
-    height: 100%;
-   
-    overflow: hidden;
 }
 
 body{
     width: 100%;
     height: 100dvh;
-     background-image: url(fundo.jpg);
-     background-size: cover;
-     background-position: top;
+    background-image: url(fundo.jpg);
+    background-size: cover;
+    background-position: top;
     display: flex;
+    flex-direction: row;
     
-    padding: 20px;
-
-    
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+    overflow: hidden;
+}
+.header{
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: space-between;
+    color: white;
     align-items: center;
-}
-
-h1{
-    width: 100%;
-    text-align: center;
-    flex-shrink: 0;
-    height: auto;
-    color: white;
-    font-size: 2.3em;
-   
-    font-family: Arial, Helvetica, sans-serif;
-}
-p{
-    color: white;
-    width: 100%;
-    height: 30px;
-    text-align: center;
-    font-size: 1em;
-    margin: 10px;
-}
-
-#rodape {
-    width: 100%;
-    height: 50px;
-
-    display: flex;
-    gap: 5px;
-
-    flex-shrink: 0;
-}
-#rodape input{
-    width: 75%;
-     background-color: rgba(0, 0, 0, 0.733);
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.719);
-    border: 1.2px solid white;
-    font-size: 1.2em;
-    font-weight: lighter;
     
 }
+.header h1{
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--redonda);
+    border-right: 1px solid white;
+    font-weight: lighter;
+     width: 25%;
+     height: 40%;
+     
+}
+#studio{
+    font-size: .4em;
+}
+.header h2{
+      font-family: "Cantarell", sans-serif;
+      text-transform: uppercase;
+      font-weight: lighter;
+        font-size: .9em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: 60%;
+      padding-left: 2%;
+}
+.header i{
+    font-size: 1.4em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.left{
+    width: 25%;
+    height: 55vh;
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 1%;
+    font-size: 1.5em;
+    gap: 30px;
+       padding-top: 10%;
+    color: white;
+}
+#house{
+    border-bottom: 1px solid white;
+    width: 50%;
+    padding: 5px;
+}
+.right{
+    width: 75%;
+    height: 80vh;
+    
+}
+.footer{
+    width: 100%;
+    height: 7vh;
+    background-color: lightpink;
+}
+
 
 #mensagem::placeholder{
     color: rgba(255, 255, 255, 0.623);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:var(--redonda);
     font-size: 1em;
+    border: none;
 }
 
 #mensagem:focus{
     background-color: transparent;
     color: white;
-    border: hidden;
+    border: none;
 }
 #rodape button{
     width: 22%;
@@ -89,20 +122,53 @@ p{
     background-color: transparent;
     
 }
+#box{
+    width: 90%;
+    height: 10%;
+    border: 1px solid white;
+    border-radius: 0px 30px 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+}
+#box input{
+    background-color: transparent;
+    border: none;
+    width: 60%;
+    padding-left: 10px;
+
+}
+
+#box i{
+    color: white;
+    font-weight: lighter;
+    width: 5%;
+}
+#box button{
+    width: 25%;
+    height: 50%;
+    border-radius: 30px;
+    color: white;
+    font-family: var(--redonda);
+    border: 1px solid white;
+    background-color: transparent;
+
+}
 
 #chat{
     width: 90%;
+    height: 85%;
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.733);
     min-height: 0;
     margin-bottom: 10px;
     display: flex;
-    padding: 10px;
+    padding: 6px;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     overflow-y: auto;
     overflow-x: hidden;
-    border: 1px solid white;
+    font-family: var(--redonda);
 }
 
 .usuario {
@@ -146,3 +212,4 @@ p{
     font-size: 1.1em;
     text-decoration: none;
 }}
+
