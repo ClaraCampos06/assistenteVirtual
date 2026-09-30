@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistente Virual</title>
 </head>
@@ -10,19 +11,19 @@
    
        
        <h1>CC assistenteVirtual()</h1>
-       <p>Chat inteligente programado pelo próprio CC</p>
-       <ul>
-        <li id="lista">Dias</li>
-        <li>Tatuadores</li>
-        <li>Horários</li>
-        <li>Orçamento</li>
-       </ul></p>
-       <div id="chat"></div>
-       <div id="rodape">
-           <input type="text" id="mensagem" placeholder="Como posso ajudar?">
-           <button onclick="enviarMensagem()">Enviar</button>
-       </div>
+       
+       <p>Conheça nossos tatuadores, horários e dias disponíveis e orçamentos</p>
+       <p id="agende">Agende seu horário aqui <i class="fa-solid fa-arrow-turn-down"></i></p>
 
+       <div id="chat"></div>
+
+       <div id="rodape">
+           <input type="text" id="mensagem" placeholder="Digite sua dúvida aqui">
+           <button onclick="enviarMensagem()">Enviar</button>
+        
+       </div>
+   <p id="rodapeText">Chat inteligente programado pelo próprio CC</p>
+   <a href="https://www.instagram.com/cc.inked/" id="cc">ClaraCampos</a>
 
     <script src="script.js"></script>
 </body>

@@ -102,7 +102,7 @@ function gerarResposta(opcao){
         break
 
     default:
-    resposta = "tente novamente"
+    resposta = "Tente novamente"
     }
 
     return resposta
@@ -203,11 +203,11 @@ function enviarMensagem() {
 
     chat.innerHTML += `
         <div class="usuario">
-            <strong>Você:</strong> ${input.value}
+            <strong>Você:</strong>  ${input.value}
         </div>
 
         <div class="assistente">
-            <strong>CC</strong>: ${resposta}
+            <strong>CC:</strong>  ${resposta}
         </div>
     `
 

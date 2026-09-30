@@ -21,7 +21,8 @@ body{
     display: flex;
     
     padding: 20px;
-    padding-bottom: 100px;
+
+    
     flex-direction: column;
     align-items: center;
 }
@@ -33,7 +34,7 @@ h1{
     height: auto;
     color: white;
     font-size: 2.3em;
-    margin-bottom: 20px;
+   
     font-family: Arial, Helvetica, sans-serif;
 }
 p{
@@ -42,29 +43,9 @@ p{
     height: 30px;
     text-align: center;
     font-size: 1em;
+    margin: 10px;
 }
-ul{
-    width: 100%;
-    height: 4%;
-    display: flex;
-    align-items: center;
-    font-size: .9em;
-    color: white;
-    justify-content: center;
-    justify-content: center;
-    gap: 10px;
-}
-li{
-    width: 25%;
-    font-weight: bold;
-    text-transform: uppercase;
-    list-style: none;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#lista{
-    width: 14%;
-}
+
 #rodape {
     width: 100%;
     height: 50px;
@@ -76,66 +57,89 @@ li{
 }
 #rodape input{
     width: 75%;
+     background-color: rgba(0, 0, 0, 0.733);
     padding: 10px;
     color: rgba(255, 255, 255, 0.719);
-    border: none;
+    border: 1.2px solid white;
     font-size: 1.2em;
     font-weight: lighter;
-    background-color: transparent;
+    
 }
 
 #mensagem::placeholder{
-    color: white;
+    color: rgba(255, 255, 255, 0.623);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4em;
+    font-size: 1em;
 }
 
 #mensagem:focus{
-    background-color: rgba(255, 255, 255, 0.527);
-    color: black;
+    background-color: transparent;
+    color: white;
     border: hidden;
 }
 #rodape button{
-    width: 25%;
+    width: 22%;
 
-    border: 2px solid white;
-    font-size: 1.4em;
-    color: white;
+    border: 1.2px solid white;
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.89);
     background-color: transparent;
     
 }
 
 #chat{
-    width: 100%;
+    width: 90%;
     flex: 1;
+    background-color: rgba(0, 0, 0, 0.733);
     min-height: 0;
+    margin-bottom: 10px;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     gap: 10px;
-
     overflow-y: auto;
     overflow-x: hidden;
+    border: 1px solid white;
 }
 
 .usuario {
     width: 100%;
-    max-height: 200px;
     display: flex;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    
+    max-height: 200px;
     padding: 10px;
+    color: white;
     font-size: 1.2em;
-    background-color: rgba(255, 255, 255, 0.63);
-
     overflow-wrap: break-word;
 }
 
 .assistente {
-    width: 100%;
-    max-height: 300px;
+     width: 100%;
     display: flex;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    
+    max-height: 200px;
     padding: 10px;
+    color: white;
     font-size: 1.1em;
-    background-color: rgba(255, 255, 255, 0.966);
     overflow-wrap: break-word;
+}
+
+#agende{
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+#rodapeText{
+    font-size: 1em;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.849);
+}
+#cc{
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 1.1em;
+    text-decoration: none;
 }
