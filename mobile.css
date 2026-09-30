@@ -118,6 +118,8 @@ body{
 .footerLeft h1{
     color: white;
     font-weight: lighter;
+    font-size: 3em;
+
     font-family: var(--redonda);
 }
 .footerLeft a{
@@ -127,6 +129,7 @@ body{
     text-decoration: none;
     border: 1px solid white;
     padding: 5px;
+    font-size: .7em;
     border-radius: 30px;
 }
 
@@ -136,7 +139,7 @@ body{
     width: 50%;
     color: rgba(255, 255, 255, 0.781);
     font-family: var(--redonda);
-    font-size: .8em;
+    font-size: .6em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -180,10 +183,13 @@ body{
 #box input{
     background-color: transparent;
     border: none;
-    width: 50%;
-    padding-left: 5%;
+    outline: none;
 
+    width: 55%;
 
+    color: white;
+    font-family: var(--redonda);
+    font-size: 1em;
 }
 
 #box i{
@@ -205,7 +211,6 @@ body{
 
 #chat{
     width: 90%;
-    height: 85%;
     flex: 1;
     min-height: 0;
     margin-bottom: 10px;
