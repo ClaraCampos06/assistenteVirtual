@@ -58,7 +58,7 @@ p{
     flex-shrink: 0;
 }
 #rodape input{
-    width: 68%;
+    width: 47%;
     background-color: rgba(0, 0, 0, 0.733);
     padding: 10px;
     color: rgba(255, 255, 255, 0.719);
@@ -90,7 +90,7 @@ p{
 }
 
 #chat{
-    width: 90%;
+    width: 70%;
     flex: 1;
     background-color: rgba(0, 0, 0, 0.733);
     min-height: 0;
