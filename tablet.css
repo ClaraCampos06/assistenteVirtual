@@ -1,4 +1,4 @@
-@media (min-width: 769px){
+@media (min-width: 600px) {
 
 :root{
     --fina:"Cantarell", sans-serif;
@@ -16,9 +16,9 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     height: auto;
-    background-image: url(tablet.jpg);
-    background-size: cover;
-    background-position: top;
+background-image: url(tablet.jpg);
+background-size: cover;
+background-position: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,7 +37,7 @@ body {
     
 }
 .header h1{
-    font-size: 3em;
+    font-size: 2em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -216,6 +216,7 @@ body {
     width: 90%;
     flex: 1;
     min-height: 0;
+    font-family: var(--redonda);
     margin-bottom: 10px;
     display: flex;
     padding: 6px;
@@ -223,7 +224,15 @@ body {
     gap: 6px;
     overflow-y: auto;
     overflow-x: hidden;
-    font-family: var(--redonda);
+    scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+
+
+#chat::-webkit-scrollbar {
+  display: none;
+}
+   
 }
 
 .usuario {
@@ -293,7 +302,7 @@ body {
 #paragrafo{
     
     width: 40%;
-    font-size: 1.2em;
+    font-size: 1em;
      color: rgba(255, 255, 255, 0.781);
    
 }
@@ -311,5 +320,5 @@ body {
     margin-top: 3%;
 }
 
-}
+
 

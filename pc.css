@@ -1,83 +1,167 @@
-@media (min-width: 1250px){
+@media (min-width: 900px) {
+    
 
-
+:root{
+    --fina:"Cantarell", sans-serif;
+    --media:"Average Sans", sans-serif;
+    --redonda:  "Noto Sans JP", sans-serif;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
-html,
+
 body {
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    background-image: url(homem.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.header{
+    width: 60%;
+    height: 15vh;
+    display: flex;
+
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    
+}
+.header h1{
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--redonda);
+    border-right: 1px solid white;
+    font-weight: lighter;
+     width: 25%;
+     height: 40%;
+     
+}
+#studio{
+    font-size: .4em;
+    color: rgba(255, 255, 255, 0.781);
+}
+.header h2{
+      font-family: "Cantarell", sans-serif;
+      text-transform: uppercase;
+      font-weight: lighter;
+        font-size: 1.1em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: 60%;
+      padding-left: 2%;
+      color: rgba(255, 255, 255, 0.781);
+}
+.header i{
+    font-size: 1.4em;
     height: 100%;
-   
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
 }
 
-body{
-    width: 100%;
-    height: 100dvh;
-     background-image: url(tablet.jpg);
-     background-size: cover;
-     background-position: top;
+.left{
+    width: 40%;
+    height: 10vh;
     display: flex;
+   
+    justify-content: space-evenly;
+    color: white;
+    align-items: center;
     
-    padding: 20px;
+}
 
-    
+#house{
+    border-bottom: 1px solid white;
+}
+.right{
+    width: 100%;
+    height: 80vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h1{
-    width: 100%;
-    text-align: center;
-    flex-shrink: 0;
-    height: auto;
-    color: white;
-    font-size: 2.8em;
-   
-    font-family: Arial, Helvetica, sans-serif;
-}
-p{
-    color: white;
-    width: 100%;
-    height: 30px;
-    text-align: center;
-    font-size: 1.4em;
-    margin: 10px;
-}
-
-#rodape {
-    width: 100%;
-    height: 60px;
-    justify-content: center;
-    display: flex;
-    gap: 5px;
-    flex-shrink: 0;
-}
-#rodape input{
-    width: 47%;
-    background-color: rgba(0, 0, 0, 0.733);
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.719);
-    border: 1.2px solid white;
-    font-size: 1.2em;
-    font-weight: lighter;
+    background-color: rgba(0, 0, 0, 0.507);
     
 }
+.footer {
+    width: 100%;
+    min-height: 56px;
+
+    flex-shrink: 0;
+    display: flex;
+   
+}
+.footerLeft{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  
+    padding-left: 3%;
+    font-family: var(--redonda);
+}
+.footerLeft h1{
+    color: white;
+    font-weight: lighter;
+    font-size: 3em;
+    margin-right: 5%;
+    font-family: var(--redonda);
+}
+.footerLeft a{
+    color: white;
+    font-weight: lighter;
+    font-family: var(--redonda);
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 30px;
+}
+
+
+.footerRight{
+    
+    width: 50%;
+    color: rgba(255, 255, 255, 0.781);
+    font-family: var(--redonda);
+    font-size: 1.2em;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 
 #mensagem::placeholder{
     color: rgba(255, 255, 255, 0.623);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
+    font-family:var(--redonda);
+    font-size: 1.2em;
+    border: none;
 }
 
 #mensagem:focus{
     background-color: transparent;
     color: white;
-    border: hidden;
+    border: none;
+    outline: none;
 }
 #rodape button{
     width: 22%;
@@ -88,20 +172,59 @@ p{
     background-color: transparent;
     
 }
+#box{
+    width: 90%;
+    height: 10%;
+    border: 1px solid white;
+    border-radius: 0px 30px 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+#box input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    width: 55%;
+
+    color: white;
+    font-family: var(--redonda);
+    font-size: 1em;
+}
+
+#box i{
+    color: white;
+    font-weight: lighter;
+    font-size: 1.2em;
+    width: 5%;
+   
+}
+#box button{
+    width: 25%;
+    height: 80%;
+    border-radius: 30px;
+    color: white;
+    font-family: var(--redonda);
+    border: 1px solid white;
+    background-color: transparent;
+
+}
 
 #chat{
-    width: 70%;
+    width: 90%;
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.733);
     min-height: 0;
     margin-bottom: 10px;
     display: flex;
-    padding: 10px;
+    padding: 6px;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     overflow-y: auto;
     overflow-x: hidden;
-    border: 1px solid white;
+    font-family: var(--redonda);
 }
 
 .usuario {
@@ -122,8 +245,9 @@ p{
     display: flex;
     justify-content: start;
     align-items: start;
-    
-    max-height: 200px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.664);
+    max-height: auto;
     padding: 10px;
     color: white;
     font-size: 1.1em;
@@ -136,12 +260,58 @@ p{
 }
 
 #rodapeText{
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 20px;
     color: rgba(255, 255, 255, 0.849);
 }
 #cc{
     color: rgba(255, 255, 255, 0.89);
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-decoration: none;
-}}
+}
+.inicioText{
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 2em;
+}
+
+.inicioText h1{
+    font-family: var(--redonda);
+    font-weight: lighter;
+    font-size: 3em;
+   
+
+}
+
+.inicioText p{
+    font-family: var(--redonda);
+    font-weight: lighter;
+    font-size: 1em;
+    
+}
+
+#paragrafo{
+    
+    width: 40%;
+    font-size: 1.2em;
+     color: rgba(255, 255, 255, 0.781);
+   
+}
+
+#virtual{
+    color: rgb(136, 146, 110);
+
+}
+
+#listaPrincipal{
+    list-style: none;
+    color: rgba(255, 255, 255, 0.89);
+    text-transform: uppercase;
+    font-size: .6em;
+    margin-top: 3%;
+}
+
+}
+
+

@@ -1,4 +1,4 @@
-@media (max-width: 768px){
+@media (max-width: 599px){
 
 :root{
     --fina:"Cantarell", sans-serif;
@@ -308,5 +308,5 @@ body {
     margin-top: 3%;
 }
 
-}
 
+}
