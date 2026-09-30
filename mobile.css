@@ -225,6 +225,12 @@ body {
     font-family: var(--redonda);
 }
 
+#chat p{
+
+    font-size: .9em;
+    width: 100%;
+}
+
 .usuario {
     width: 100%;
     display: flex;
@@ -271,41 +277,21 @@ body {
     width: 100%;
     height: 100%;
     color: white;
-    font-size: 2em;
+
 }
 
 .inicioText h1{
     font-family: var(--redonda);
     font-weight: lighter;
     font-size: 3em;
-   
-
 }
 
-.inicioText p{
-    font-family: var(--redonda);
-    font-weight: lighter;
-    font-size: 1em;
-    
-}
-
-#paragrafo{
-    font-size: .7em;
-     color: rgba(255, 255, 255, 0.781);
-   
-}
-
-#virtual{
-    color: rgb(136, 146, 110);
-
-}
 
 #listaPrincipal{
     list-style: none;
     color: rgba(255, 255, 255, 0.89);
     text-transform: uppercase;
     font-size: .6em;
-    margin-top: 3%;
 }
 
 
