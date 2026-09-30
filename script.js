@@ -34,6 +34,17 @@ estilo: "Oriental"
 }
 ]
 
+
+let chat = document.querySelector("#chat")
+
+chat.innerHTML = `
+    <div class="inicioText">
+        <h1>CC</h1> <br>
+        <p>assistenteVirtual()</p> <br>
+        <p id="paragrafo">Conheça nossos tatuadores e agende um horário digitando o que deseja saber</p>
+    </div>
+`
+
 function identificarOpcao(mensagem){
    
     let opcao
