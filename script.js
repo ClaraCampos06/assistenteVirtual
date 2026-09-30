@@ -138,7 +138,8 @@ function gerarResposta(opcao){
         etapa = "tatuador"
         break
 
- 
+    default:
+      resposta = "Para uma melhor experiência, digite algo como: Agendamento, Horários, Tatuadores, Orçamento"
     }
 
     return resposta
