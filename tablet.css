@@ -327,6 +327,17 @@ background-position: center;
 .inicioText p{
     font-family: var(--redonda);
     font-weight: lighter;
+    font-size: 1em !important;
+    color: rgba(255, 255, 255, 0.89);
+}
+.inicioText ul{
+    display: flex;
+    gap: 10%;
+    margin: 0;
+    padding: 10px;
+    font-family: var(--redonda);
+    font-weight: normal;
+    font-size: .6em !important;
     color: white;
 }
 #paragrafo{
