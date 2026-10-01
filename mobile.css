@@ -84,7 +84,7 @@ backdrop-filter: brightness(0.3) blur(3px);
 
 .left{
     width: 25%;
-    height: 55vh;
+    height: 60vh;
     border-right: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -307,6 +307,7 @@ backdrop-filter: brightness(0.3) blur(3px);
     width: 100%;
     height: 100%;
     color: white;
+
     
     display: flex;
     flex-direction: column;
@@ -323,6 +324,23 @@ backdrop-filter: brightness(0.3) blur(3px);
 .inicioText p{
     font-family: var(--redonda);
     font-weight: lighter;
+    font-size: 1.65em !important ;
+    color: white;
+}
+
+.inicioText ul{
+    padding-top: 3%;
+    width: 80%;
+    margin-left: 5%;
+    padding-left: 10px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    padding-bottom: 3%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    list-style: none;
+    font-family: var(--redonda);
+    font-size: 1.65em !important ;
     color: white;
 }
 #paragrafo{

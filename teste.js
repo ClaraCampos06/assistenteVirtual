@@ -162,6 +162,7 @@ function mostrarInicio() {
                 <li>Tatuadores</li>
                 <li>Orçamento</li>
             </ul>
+            <p class="paragrafo">Ou selecione o ícone correspondente</p>
         </div>
     `
 }
