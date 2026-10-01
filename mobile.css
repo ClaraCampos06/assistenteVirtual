@@ -25,7 +25,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 
-backdrop-filter: brightness(0.5) blur(3px);
+backdrop-filter: brightness(0.3) blur(3px);
 }
 .header{
     width: 100%;
