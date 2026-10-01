@@ -111,11 +111,11 @@ function gerarResposta(opcao){
 
     switch (opcao){
     case "horario":
-    resposta = "Horário de funcionamento: 07h - 22h"
+    resposta = "◦Horário de funcionamento: <br><br> <strong>07h às 22h</strong>"
     break
 
     case "dia":
-    resposta = "Dia de funcionamento: Segunda à Sexta"
+    resposta = "◦Dia de funcionamento: <br><br> <strong>Segunda à Sexta</strong>"
     break
 
     case "tatuadores":
@@ -131,15 +131,15 @@ function gerarResposta(opcao){
     break
 
     case "agendamento":
-        resposta = "Para agendar, conheça nossos tatuadores: <br>Qual tatuador você se identifica mais? <br>"
+        resposta = "Para agendar, conheça nossos tatuadores e escolha quem deseja:<br> <br>"
           for (let tatuador of tatuadores){
-        resposta += `${tatuador.nome} >>  ${tatuador.estilo} <br>`
+        resposta += `<strong>◦${tatuador.nome}</strong>${tatuador.estilo} <br><br>`
     }
         etapa = "tatuador"
         break
 
     default:
-      resposta = "Para uma melhor experiência, digite algo como: Agendamento, Horários, Tatuadores, Orçamento"
+      resposta = "Para uma melhor experiência, digite algo como: <br><br> ◦AGENDAR <br> ◦HORÀRIOS <br> ◦TATUADORES <br> ◦ORÇAMENTOS <br> "
     }
 
     return resposta
@@ -193,14 +193,14 @@ else if (etapa === "tatuador") {
         )
 
         resposta = `
-            Você escolheu ${tatuador.nome}.
+        Qual dia você prefere?<br><br>
+            <strong>◦Seu tatuador</strong> ${tatuador.nome}
             <br><br>
 
-            Dias disponíveis:<br>
-            ${dias.join(", ")}
-            <br><br>
-
-            Qual dia você prefere?
+            <strong>◦Dias disponíveis</strong>
+            ${dias.join("<br> ")}
+            <br><br>    
+            
         `
 
         etapa = "dia"
@@ -232,19 +232,15 @@ else if (etapa === "dia") {
             disponibilidade[tatuadorEscolhido][diaEscolhido]
 
         resposta = `
-            Perfeito!
-            <br><br>
+        Qual horário você prefere?<br><br>
+            <strong>${tatuadorEscolhido}<br> ◦Horários disponíveis
+            na ${diaEscolhido}</strong>
 
-            ${tatuadorEscolhido} tem estes horários disponíveis
-            na ${diaEscolhido}:
+           ${horarios.join("<br> ")}
 
-            <br><br>
+            <br>
 
-            ${horarios.join(", ")}
-
-            <br><br>
-
-            Qual horário você prefere?
+            
         `
 
         etapa = "horario"
@@ -274,17 +270,15 @@ else if (etapa === "horario") {
     if (horarios.includes(horarioEscolhido)) {
 
         resposta = `
-            Horário selecionado com sucesso!
+            Informe seu nome para concluir o agendamento:
 
             <br><br>
 
-            Tatuador: ${tatuadorEscolhido}<br>
-            Dia: ${diaEscolhido}<br>
-            Horário: ${horarioEscolhido}
-
-            <br><br>
-
-            Digite aqui o seu nome:
+            <strong>◦Tatuador</strong> ${tatuadorEscolhido}<br>
+             <strong>◦Dia </strong> ${diaEscolhido}<br>
+             <strong>◦Horário </strong> ${horarioEscolhido}<br>
+             
+            
         `
 
         etapa = "nome"
@@ -308,22 +302,19 @@ else if (etapa === "nome") {
     nomeCliente = input.value.trim()
 
     resposta = `
-        Prazer, ${nomeCliente}! 😊
+        <strong>Confira seu agendamento, ${nomeCliente}</strong>
 
         <br><br>
 
-        Confira seu agendamento:
+        <strong>◦Cliente</strong>
+         ${nomeCliente}<br>
+        <strong>◦Tatuador</strong> ${tatuadorEscolhido}<br>
+        <strong>◦Dia</strong> ${diaEscolhido}<br>
+        <strong>◦Horário</strong> ${horarioEscolhido}
 
         <br><br>
 
-        Nome: ${nomeCliente}<br>
-        Tatuador: ${tatuadorEscolhido}<br>
-        Dia: ${diaEscolhido}<br>
-        Horário: ${horarioEscolhido}
-
-        <br><br>
-
-        Deseja confirmar o agendamento?
+        <strong>Deseja confirmar o agendamento?</strong>
 
         <br>
 
@@ -343,14 +334,15 @@ else if (etapa === "confirmacao") {
 
             <br>
 
-            Nome: ${nomeCliente}<br>
-            Tatuador: ${tatuadorEscolhido}<br>
-            Dia: ${diaEscolhido}<br>
-            Horário: ${horarioEscolhido}
+            <strong>◦Nome</strong> ${nomeCliente}<br><br>
+            <strong>◦Tatuador</strong> ${tatuadorEscolhido}<br><br>
+            <strong>◦Dia</strong> ${diaEscolhido}<br><br>
+            <strong>◦Horário</strong> ${horarioEscolhido}
 
             <br>
 
-            Estamos esperando por você no CC Studio Tattoo.
+            <br>
+            <strong>Obrigado pela confiança!</strong>
         `
 
         etapa = "inicio"
@@ -363,7 +355,9 @@ else if (etapa === "confirmacao") {
             <br><br>
 
             Se quiser tentar novamente,
-            digite <strong>agendar</strong>.
+            digite <strong>
+            <br>
+            AGENDAR</strong>
         `
 
         etapa = "inicio"
