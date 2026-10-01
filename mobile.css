@@ -242,6 +242,8 @@ backdrop-filter: brightness(0.3) blur(3px);
 
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 15px 0 15px 15px;
+    font-family: var(--redonda);
+    font-weight: lighter;
 }
 .assistente {
     width: 85%;
@@ -255,6 +257,8 @@ backdrop-filter: brightness(0.3) blur(3px);
     border-radius: 0 15px 15px 15px;
 
     overflow-wrap: break-word;
+    font-family: var(--redonda);
+    font-weight: lighter;
 }
 #agende{
     text-transform: uppercase;
