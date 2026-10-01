@@ -341,14 +341,14 @@ else if (etapa === "confirmacao") {
         resposta = `
             <strong>Agendamento confirmado!</strong>
 
-            <br><br>
+            <br>
 
             Nome: ${nomeCliente}<br>
             Tatuador: ${tatuadorEscolhido}<br>
             Dia: ${diaEscolhido}<br>
             Horário: ${horarioEscolhido}
 
-            <br><br>
+            <br>
 
             Estamos esperando por você no CC Studio Tattoo.
         `

@@ -25,7 +25,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 
-backdrop-filter: brightness(0.6) blur(3px);
+backdrop-filter: brightness(0.5) blur(3px);
 }
 .header{
     width: 100%;
@@ -251,7 +251,6 @@ backdrop-filter: brightness(0.6) blur(3px);
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.664);
     max-height: auto;
     padding: 10px;
     color: white;
