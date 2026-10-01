@@ -49,19 +49,29 @@ estilo: "Oriental"
 
 let chat = document.querySelector("#chat")
 
-chat.innerHTML = `
-    <div class="inicioText">
-        <h1>CC</h1>
-        <p>assistenteVirtual()</p> <br>
-        <p id="paragrafo">Conheça nossos tatuadores e agende um horário digitando:</p>
-        <ul id="listaPrincipal">
-        <li>Agendar
-        <li>Horários
-        <li>Tatuadores
-        <li>Orçamento
-        </ul>
-    </div>
-`
+function mostrarInicio() {
+    chat.innerHTML = `
+        <div class="inicioText">
+            <h1>CC</h1>
+            <p id="paragrafo">assistenteVirtual()</p> <br>
+            <p id="paragrafo">Conheça nossos tatuadores e agende um horário digitando:</p>
+            <ul id="listaPrincipal">
+                <li>Agendar</li>
+                <li>Horários</li>
+                <li>Tatuadores</li>
+                <li>Orçamento</li>
+            </ul>
+        </div>
+    `
+}
+
+mostrarInicio()
+let house = document.querySelector("#house")
+
+house.addEventListener("click", function () {
+    mostrarInicio()
+    etapa = "inicio"
+})
 
 function identificarOpcao(mensagem){
    
@@ -413,8 +423,7 @@ function mensagemDoIcone(texto) {
 let calendario = document.querySelector("#calendario")
 let tatuadoresIcone = document.querySelector("#tatuadores")
 let agendamento = document.querySelector("#agendamento")
-let informacao = document.querySelector("#informacao")
-let house = document.querySelector("#house")
+
 
 
 calendario.addEventListener("click", function() {
@@ -438,8 +447,3 @@ agendamento.addEventListener("click", function() {
 })
 
 
-informacao.addEventListener("click", function() {
-
-    mensagemDoIcone("qual é a localização do estúdio?")
-
-})
