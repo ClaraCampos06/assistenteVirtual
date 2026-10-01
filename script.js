@@ -67,7 +67,7 @@ function identificarOpcao(mensagem){
    
     let opcao
 
-    if (mensagem.includes("dia") ||
+    if (mensagem.includes("funcionamento") ||
         mensagem.includes("dias")
     ){
         opcao = "dia"
@@ -96,13 +96,7 @@ function identificarOpcao(mensagem){
         mensagem.includes("marcar")
     ) {
     opcao = "agendamento"
-    } else if (mensagem.includes("local")||
-               mensagem.includes("estudio") ||
-               mensagem.includes("endereco")     
-            ) {
-                opcao = "localizacao"
-            }
-
+    }
     return opcao
 }
 
@@ -328,6 +322,7 @@ else if (etapa === "nome") {
 else if (etapa === "confirmacao") {
 
     if (mensagem === "sim") {
+        
 
         resposta = `
             <strong>Agendamento confirmado!</strong>

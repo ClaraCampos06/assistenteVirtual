@@ -234,7 +234,7 @@ background-position: center;
   display: none;
 }
    
-}
+
 
 .usuario {
     width: 100%;
@@ -308,10 +308,7 @@ background-position: center;
    
 }
 
-#virtual{
-    color: rgb(136, 146, 110);
 
-}
 
 #listaPrincipal{
     list-style: none;
@@ -323,3 +320,4 @@ background-position: center;
 
 
 
+}
