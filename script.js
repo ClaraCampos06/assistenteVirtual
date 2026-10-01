@@ -7,6 +7,11 @@ let diaEscolhido = ""
 let horarioEscolhido = ""
 let nomeCliente = ""
 
+function linkWhatsApp() {
+    let texto = `Olá! Sou ${nomeCliente} e agendei com ${tatuadorEscolhido} na ${diaEscolhido} às ${horarioEscolhido}.`
+    return "https://wa.me/5528999999999?text=" + encodeURIComponent(texto)
+}
+
 let disponibilidade = {
 
     Maria: {
@@ -347,6 +352,8 @@ else if (etapa === "confirmacao") {
             <br>
 
             <br>
+            <a href="${linkWhatsApp()}" target="_blank">Confirmar no WhatsApp</a>
+            <br><br>
             <strong>Obrigado pela confiança!</strong>
         `
 
@@ -379,20 +386,42 @@ else {
 
 
 
+       // 1) a bolha do usuário aparece na hora
     chat.innerHTML += `
         <div class="usuario">
             <strong>Você:</strong>  ${input.value}
         </div>
-
-        <div class="assistente">
-            <strong>CC:</strong>  ${resposta}
-        </div>
     `
 
+    input.value = ""
+
+    // 2) aparece o "digitando..."
+    let bolha = document.createElement("div")
+    bolha.className = "assistente digitando"
+    bolha.innerHTML = "<span></span><span></span><span></span>"
+    chat.appendChild(bolha)
     chat.scrollTop = chat.scrollHeight
 
-    input.value = ""
+    // 3) depois de 0,7s, troca os pontinhos pela resposta
+    setTimeout(function () {
+        bolha.classList.remove("digitando")
+        bolha.innerHTML = `<strong>CC:</strong> ${resposta}`
+        chat.scrollTop = chat.scrollHeight
+
+        // os chips entram aqui dentro, depois da resposta
+        if (etapa === "tatuador") mostrarChips(tatuadores.map(t => t.nome))
+        else if (etapa === "dia") mostrarChips(Object.keys(disponibilidade[tatuadorEscolhido]))
+        else if (etapa === "horario") mostrarChips(disponibilidade[tatuadorEscolhido][diaEscolhido])
+        else if (etapa === "confirmacao") mostrarChips(["sim", "não"])
+    }, 700)
+  if (input.value.trim() === "") {
+      return
+  }
+
+  document.querySelector(".chips")?.remove()
 }
+
+
 
 let input = document.querySelector("#mensagem")
 

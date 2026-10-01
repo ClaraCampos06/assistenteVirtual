@@ -1,3 +1,10 @@
+.digitando span { display: inline-block; width: 6px; height: 6px; margin: 0 2px;
+    border-radius: 50%; background: white; animation: pulo 1s infinite; }
+.digitando span:nth-child(2) { animation-delay: .15s }
+.digitando span:nth-child(3) { animation-delay: .3s }
+@keyframes pulo { 0%,80%,100% { opacity: .2; transform: translateY(0) } 40% { opacity: 1; transform: translateY(-4px) } }
+
+
 @media (max-width: 599px){
 
 :root{
@@ -335,4 +342,72 @@ i p{
     text-align: center;
     margin-top: 7px;
     text-transform: uppercase;
+}
+
+.assistente a{
+    color: greenyellow;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+/* =========================================================
+   COLE ESTE BLOCO NO FINAL DO mobile.css
+   (depois da chave } que fecha o @media, junto das regras
+   .assistente e .usuario com gradiente)
+   ========================================================= */
+
+/* ---------- Botões de resposta rápida ---------- */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 0;
+}
+
+.chips button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: lighter;
+    font-size: .85em;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.chips button:hover {
+    background: white;
+    color: black;
+}
+
+/* ---------- Animação "digitando..." ---------- */
+.digitando span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background: white;
+    animation: pulo 1s infinite;
+}
+
+.digitando span:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.digitando span:nth-child(3) {
+    animation-delay: .3s;
+}
+
+@keyframes pulo {
+    0%, 80%, 100% {
+        opacity: .2;
+        transform: translateY(0);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
 }
