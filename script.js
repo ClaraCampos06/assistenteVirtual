@@ -123,10 +123,10 @@ function gerarResposta(opcao){
     break
 
     case "tatuadores":
-    resposta = "Nossos tatuadores:<br>"
+    resposta = "Nossos tatuadores:<br><br>"
 
     for (let tatuador of tatuadores){
-        resposta += `${tatuador.nome} >>  ${tatuador.estilo} <br>`
+        resposta += `<strong>◦${tatuador.nome}</strong> <br> ${tatuador.estilo}<br>`
     }
     break
 

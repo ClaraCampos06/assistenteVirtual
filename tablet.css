@@ -317,7 +317,39 @@ background-position: center;
     font-size: .6em;
     margin-top: 3%;
 }
+.inicioText h1{
+    font-family: var(--redonda);
+    font-weight: lighter;
+    font-size: 4em !important ;
+    color: white;
+}
 
+.inicioText p{
+    font-family: var(--redonda);
+    font-weight: lighter;
+    color: white;
+}
+#paragrafo{
+  
+     color: rgba(255, 255, 255, 0.89);
+    font-size: 1em !important;
+    font-family: var(--redonda);
+    padding-bottom: 20px;
+}
+.left i{
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 1.2em !important;
+}
+i p{
+    
+    font-size: .7em;
+    font-family: var(--redonda);
+    text-align: center;
+
+    margin-top: 7px;
+    text-transform: uppercase;
+}
 
 
 }
