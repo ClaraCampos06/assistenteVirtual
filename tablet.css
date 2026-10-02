@@ -28,6 +28,7 @@ background-position: center;
     backdrop-filter: blur(1.1px) brightness(1);
 
 }
+
 .header{
     width: 60%;
     height: 10vh;
@@ -77,19 +78,29 @@ background-position: center;
     width: 20%;
 }
 
+
+
 .left{
     width: 40%;
     height: 10vh;
     display: flex;
-   
+   color: rgba(245, 245, 245, 0.767);
     justify-content: space-evenly;
-    color: white;
+transition: .2s;
+
     align-items: center;
     
+}
+.left i:hover{
+    color: white;
+    transition: .2s;
+    cursor: pointer;
 }
 
 #house{
     border-bottom: 1px solid white;
+    width: 40%;
+    
 }
 .right{
     width: 100%;
