@@ -311,12 +311,9 @@ transition: .2s;
     
 }
 
-#paragrafo{
-    
+.paragrafo{
     width: 40%;
-    font-size: 1em;
-     color: rgba(255, 255, 255, 0.781);
-   
+    color: rgba(255, 255, 255, 0.89);
 }
 
 
@@ -351,13 +348,7 @@ transition: .2s;
     font-size: .6em !important;
     color: white;
 }
-#paragrafo{
-  
-     color: rgba(255, 255, 255, 0.89);
-    font-size: 1em !important;
-    font-family: var(--redonda);
-    padding-bottom: 20px;
-}
+
 .left i{
     width: 100%;
     padding-bottom: 10px;
@@ -374,4 +365,8 @@ i p{
 }
 
 
+}
+.assistente.digitando {
+    flex-direction: row;
+    align-items: center;
 }
