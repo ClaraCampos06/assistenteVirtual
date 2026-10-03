@@ -257,6 +257,7 @@ transition: .2s;
     padding: 10px;
     color: white;
     font-size: 1.2em;
+    
     overflow-wrap: break-word;
 }
 
@@ -271,6 +272,7 @@ transition: .2s;
     padding: 10px;
     color: white;
     font-size: 1.1em;
+    
     overflow-wrap: break-word;
 }
 
